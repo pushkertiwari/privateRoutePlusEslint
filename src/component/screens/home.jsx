@@ -11,7 +11,7 @@ const btnStyle = {
 class Home extends Component {
     constructor(props) {
         super(props);
-        document.title = "Home"
+        document.title = process.env.REACT_APP_WEBSITE_NAME + ' Home'
         this.state = {
             value: 'first'
         }

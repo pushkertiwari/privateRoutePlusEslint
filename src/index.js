@@ -9,6 +9,7 @@ import * as serviceWorker from './serviceWorker'
 
 const fakeAuth = {
   isAuthenticated: false,
+  data: sessionStorage.getItem('test'),
   authenticate(cb) {
     this.isAuthenticated = true
     setTimeout(cb, 100)
