@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component, Fragment } from 'react'
 import { withRouter } from 'react-router-dom'
 const btnStyle = {
     background: 'skyblue',
@@ -19,32 +19,29 @@ class Home extends Component {
         this.handlePage = this.handlePage.bind(this)
     }
     componentWillMount() {
-        console.log("hello1")
+        // console.log("hello1")
     }
     componentDidMount() {
-        console.log('hello 2')
+        //console.log('hello 2')
     }
     shouldComponentUpdate(nextProps, nextState) {
-        console.log(this.state.value, 'sdgfas', nextState.value, nextProps);
-        alert('sdgdsg');
-        return this.state.value !== nextState.value;
+        alert('sdgdsg')
+        return this.state.value !== nextState.value
     }
     componentWillUnmount(props) {
-        console.log(props, 'props willUnmount')
         this.setState({
             value: 'removed value'
         })
-        alert('checking');
+        alert('checking')
     }
     handleClick(e) {
-        e.preventDefault();
+        e.preventDefault()
         this.setState({
             value: 'update value'
         })
-        console.log('dekho')
     }
     handlePage(e) {
-        e.preventDefault();
+        e.preventDefault()
         this.props.history.push('/term')
     }
 
@@ -55,7 +52,7 @@ class Home extends Component {
                 <button style={btnStyle} onClick={this.handleClick}>Click</button>
                 <button style={btnStyle} onClick={this.handlePage}>Move Page</button>
             </Fragment>
-        );
+        )
     }
 }
 export default withRouter(Home)

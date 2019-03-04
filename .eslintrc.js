@@ -20,7 +20,7 @@ module.exports = {
     plugins: ['react', 'babel'],
     rules: {
         "no-extra-semi": 2,
-        'indent': [1, 2],
+        'indent': [1, 4],
         'no-debugger': 1,
         "no-console": [1, { allow: ['error'] }],
         'no-case-declarations': 2,
@@ -29,7 +29,7 @@ module.exports = {
         'no-unused-vars': 1,
         'linebreak-style': [2, 'unix'],
         'quotes': [1, 'single'],
-        'semi': [2, 'never']
+        'semi': [1, 'never']
     },
     settings: {
         "react": {

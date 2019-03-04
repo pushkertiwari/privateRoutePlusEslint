@@ -3,7 +3,7 @@ class Term extends Component {
     constructor(props) {
         super(props)
         document.title = 'Term page'
-        this.textInput = React.createRef();
+        this.textInput = React.createRef()
         this.state = {
             termPage: 'Term page',
             textValue: 'testing value'

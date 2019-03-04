@@ -8,16 +8,16 @@ import Term from './component/screens/term.jsx'
 import * as serviceWorker from './serviceWorker'
 
 const fakeAuth = {
-  isAuthenticated: false,
-  data: sessionStorage.getItem('test'),
-  authenticate(cb) {
-    this.isAuthenticated = true
-    setTimeout(cb, 100)
-  },
-  signout(cb) {
-    this.isAuthenticated = false
-    setTimeout(cb, 100)
-  }
+    isAuthenticated: false,
+    data: sessionStorage.getItem('test'),
+    authenticate(cb) {
+        this.isAuthenticated = true
+        setTimeout(cb, 100)
+    },
+    signout(cb) {
+        this.isAuthenticated = false
+        setTimeout(cb, 100)
+    }
 }
 
 /*
@@ -27,21 +27,20 @@ Made private Route for inside components
 */
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
-  <Route {...rest} render={(props) => (
-    fakeAuth.isAuthenticated === true ? <Component {...props} /> : <Redirect to='/' />
-  )} />
+    <Route {...rest} render={(props) => (
+        fakeAuth.isAuthenticated === true ? <Component {...props} /> : <Redirect to='/' />
+    )} />
 )
 
 ReactDOM.render(
-  <Fragment>
-    <Router history={history}>
-      <Switch>
-        <Route exact path='/' component={App} />
-        {/* <Route exact path='/term' component={Term} /> */}
-        <PrivateRoute path='/term' component={Term} />
-      </Switch>
-    </Router>
-  </Fragment>, document.getElementById('root'))
+    <Fragment>
+        <Router history={history}>
+            <Switch>
+                <Route exact path='/' component={App} />
+                <PrivateRoute path='/term' component={Term} />
+            </Switch>
+        </Router>
+    </Fragment>, document.getElementById('root'))
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
